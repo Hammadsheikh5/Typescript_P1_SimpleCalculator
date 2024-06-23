@@ -1,4 +1,5 @@
 import inquirer from "inquirer";
+import chalk from "chalk";
 // Asking Questions from Users through Inquirer
 let answers = await inquirer.prompt([
     { message: "Enter First Number", type: "number", name: "firstNumber" },
@@ -12,16 +13,16 @@ let answers = await inquirer.prompt([
 ]);
 // Condtional statements If-Else
 if (answers.operator === "Addition") {
-    console.log(answers.firstNumber + answers.secondNumber);
+    console.log(chalk.green.bold(answers.firstNumber + answers.secondNumber));
 }
 else if (answers.operator === "Subtractions") {
-    console.log(answers.firstNumber - answers.secondNumber);
+    console.log(chalk.green.bold(answers.firstNumber - answers.secondNumber));
 }
 else if (answers.operator === "Multiplication") {
-    console.log(answers.firstNumber * answers.secondNumber);
+    console.log(chalk.green.bold(answers.firstNumber * answers.secondNumber));
 }
 else if (answers.operator === "Division") {
-    console.log(answers.firstNumber / answers.secondNumber);
+    console.log(chalk.green.bold(answers.firstNumber / answers.secondNumber));
 }
 else {
     console.log("Invalid Input");
